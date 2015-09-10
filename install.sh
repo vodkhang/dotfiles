@@ -19,6 +19,7 @@ dotfiles="
     _shrc
     _tmux.conf
     _zshrc
+    _bash_aliases
     _git-prompt.sh
 "
 

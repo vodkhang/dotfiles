@@ -158,43 +158,6 @@ xterm*|rxvt*)
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# some git aliases
-alias g="git"
-alias gl="git log --oneline"
-alias gll="git log"
-alias gf="git fetch"
-alias gd="git d"
-alias gvi="vim -p \`git diff --name-only\`"
-
-# some useful aliases
-alias tfox="(tmux has -t fox && tmux attach -t fox) || tmux new -s fox"
-alias gitvim="vim -p \`git diff --name-only\`"
-alias adbrestart="sudo ~/programs/android-sdk/platform-tools/adb kill-server; sudo ~/programs/android-sdk/platform-tools/adb start-server"
-alias adb="sudo ~/programs/android-sdk/platform-tools/adb"
-alias fastboot="sudo ~/programs/android-sdk/platform-tools/fastboot"
-alias emulator="~/programs/android-sdk/tools/emulator"
-alias wearlisten="~/programs/android-sdk/platform-tools/adb -d forward tcp:5601 tcp:5601"
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -208,10 +171,20 @@ fi
 #if [[ "$TERM" != "screen" ]]; then
 #    tfox
 #fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-export PATH=$PATH:/home/btquanto/Android/Sdk/platform-tools:/home/btquanto/Programs/android-studio/bin
+
+# Check if ssh is added
+if [ "$DESKTOP_SESSION" == "" ]; then
+    ssh-add -l &> /dev/null || eval `ssh-agent -s` && ssh-add
+fi
+
+export PATH=$PATH:/home/btquanto/Android/Sdk/tools:/home/btquanto/Android/Sdk/platform-tools:/home/btquanto/Programs/android-studio/bin:/home/btquanto/Programs/genymotion
+
+export PATH=/home/btquanto/Programs/scripts:$PATH
+export PATH=/home/btquanto/Programs/sublime-text-2:$PATH

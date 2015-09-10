@@ -14,7 +14,7 @@
     pager = vim -c 'set nonumber buftype=nofile' -
 	editor = vim
 [user]
-	email = quan@cogini.com
+	email = btquanto@gmail.com
 	name = Quan To
 [credential]
 	helper = cache --timeout=7200
@@ -25,4 +25,6 @@
 [rerere]
 	enabled = true
 [push]
+	default = current
+[pull]
 	default = current
