@@ -180,9 +180,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # Check if ssh is added
-if [ "$DESKTOP_SESSION" == "" ]; then
-    ssh-add -l &> /dev/null || eval `ssh-agent -s` && ssh-add
-fi
+#if [ "$DESKTOP_SESSION" == "" ]; then
+#    ssh-add -l &> /dev/null || eval `ssh-agent -s` && ssh-add
+#fi
 
 export PATH=$PATH:/home/btquanto/Android/Sdk/tools:/home/btquanto/Android/Sdk/platform-tools:/home/btquanto/Programs/android-studio/bin:/home/btquanto/Programs/genymotion
 
@@ -203,3 +203,8 @@ export PATH=$COCOS_TEMPLATES_ROOT:$PATH
 export ANDROID_SDK_ROOT=/home/btquanto/Android/Sdk
 export PATH=$ANDROID_SDK_ROOT:$PATH
 export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
+export ANDROID_HOME=/home/btquanto/Android/Sdk
+
+# added by Anaconda2 2.4.1 installer
+export PATH="/home/btquanto/Programs/anaconda2/bin:$PATH"
+export ANDROID_DAILY_OVERRIDE="5bb354526b184add7f800aac75cf1e1cdfdfce6c";

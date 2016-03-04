@@ -203,3 +203,4 @@ runtime macros/matchit.vim
 cabbr <expr> %% expand('%:p:h')
 nnoremap <Leader>e :e <C-R>=expand('%:p:h') . '/'<CR>
 nnoremap <Leader>t :tabnew <C-R>=expand('%:p:h') . '/'<CR>
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
