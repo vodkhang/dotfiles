@@ -36,3 +36,4 @@ alias fix_fastboot_permission="sudo chmod 4550 ~/Android/Sdk/platform-tools/fast
 alias swap_fn="echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode"
 alias fix_ssh="ssh-add -l &> /dev/null || eval `ssh-agent -s` && ssh-add"
 alias ssh_aws="ssh -i \"/home/btquanto/.ssh/zappasoft-amazon-instance.pem\" ubuntu@ec2-52-36-240-108.us-west-2.compute.amazonaws.com"
+alias watch_mem="watch -n 5 free -m"
